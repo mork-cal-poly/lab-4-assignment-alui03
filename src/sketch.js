@@ -9,29 +9,31 @@ function setup() {
 }
 
 function draw() {
-  //---------- Background -------------------------
-  push();
+  drawBackground();
+  drawBMO();
+  drawLSP();
+}
 
-    
-  // rainbow
-  noStroke();
+function drawBackground() {
+  push();
   
-  fill(255,179,186);
+  // Rainbow
+  noStroke();
+  fill(255, 179, 186);
   arc(200, 120, 320, 235, PI, 0);
-  fill(255,223,186);
+  fill(255, 223, 186);
   arc(200, 120, 300, 215, PI, 0);
-  fill(255,255,186);
+  fill(255, 255, 186);
   arc(200, 120, 280, 195, PI, 0);
-  fill(186,255,201);
+  fill(186, 255, 201);
   arc(200, 120, 260, 175, PI, 0);
-  fill(186,225,255);
+  fill(186, 225, 255);
   arc(200, 120, 240, 155, PI, 0);
-  fill(246,227,255);
+  fill(246, 227, 255);
   arc(200, 120, 220, 135, PI, 0);
   
-  //clouds
+  // Clouds
   fill(255);
-  
   ellipse(100, 120, 30);
   ellipse(80, 110, 30);
   ellipse(60, 120, 30);
@@ -49,12 +51,12 @@ function draw() {
   ellipse(300, 135, 30);
 
   pop();
+}
 
-  //---------- Creature--- -------------------------
+function drawBMO() {
   push();
-    translate(200, 400);
+  translate(200, 400);
   
-  // Creature Code
   // BMO's body
   fill(112, 185, 171);
   noStroke();
@@ -62,7 +64,6 @@ function draw() {
 
   fill(215, 244, 221);
   rect(-75, -325, 150, 100, 8);
-  
   
   // BMO's eyes 
   fill(0);
@@ -74,13 +75,12 @@ function draw() {
   arc(0, -265, 40, 40, 0, PI);
   line(-20, -265, 20, -265);
   
-  
   // BMO buttons
   fill(20, 48, 39);
   noStroke();
   rect(-75, -210, 110, 8);
   
-   // blue circle  
+  // Blue circle  
   fill(12, 2, 170);
   noStroke();
   circle(65, -206, 12);
@@ -99,12 +99,12 @@ function draw() {
   rect(-75, -125, 40, 8, 20);
   rect(-25, -125, 40, 8, 20);
   
-    // green circle
+  // Green circle
   fill(112, 226, 24);
   noStroke();
   circle(60, -168, 15);
   
-    // red circle
+  // Red circle
   fill(214, 52, 29);
   noStroke();
   circle(45, -138, 20);
@@ -112,7 +112,6 @@ function draw() {
   // BMO's legs
   fill(86, 120, 126);
   noStroke();
-
   rect(-50, -100, 15, 100, 0, 0, 20, 20);
   rect(40, -100, 15, 100, 0, 0, 20, 20);
   rect(-75, -15, 40, 15, 20, 0, 0, 0);
@@ -135,6 +134,9 @@ function draw() {
   rect(130, -278, 35, 15, 20, 20, 20, 0);
   rect(-165, -278, 35, 15, 20, 20, 0, 20);
 
-
   pop();
+}
+
+function drawLSP() {
+  // Draw LSP 
 }
