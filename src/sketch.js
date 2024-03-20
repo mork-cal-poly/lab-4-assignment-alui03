@@ -11,7 +11,7 @@ function setup() {
 function draw() {
   drawBackground();
   drawBMO();
-  drawLSP();
+  drawBear();
 }
 
 function drawBackground() {
@@ -137,6 +137,20 @@ function drawBMO() {
   pop();
 }
 
-function drawLSP() {
-  // Draw LSP 
+function drawBear() {
+  push();
+  translate(200,400);
+  
+  fill(148, 118, 97);
+  noStroke(); 
+    ellipse(-150, 5-50, 50, 65); // Body
+    ellipse(-75-100, -60-50, 25, 25); // left ear
+    ellipse(-25-100, -60-50, 25, 25); // right ear
+    ellipse(-50-100, -40-50, 50, 50); // head
+    ellipse(-65-100, -65, 40, 20);// left arm
+    ellipse(-35-100, -65, 40, 20);// right arm
+    ellipse(-65-97, -20, 40, 20);// left leg
+    ellipse(-35-103, -20, 40, 20);// right leg
+
+  pop();
 }
