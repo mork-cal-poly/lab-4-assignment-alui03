@@ -15,6 +15,7 @@ function setup() {
 
 function draw() {
   drawBackground();
+  drawDino(200, 100, 0.1);
   drawBMO();
   drawBear();
   
@@ -189,6 +190,52 @@ function drawBear() {
     stroke(2);
     arc(-153, -88, 6, 5, 0, PI);
     arc(-146, -88, 6, 5, 0, PI);
+  
+  pop();
+}
+
+function drawDino(x, y, s) {
+  push();
+  translate(x, y);
+  scale(s);
+  fill(91, 139, 99);
+  noStroke();
+  
+  //body
+  ellipse(0, -175, 200, 100);
+  
+  //front right leg
+  rect(-100, -175, 20, 75);
+  ellipse(-105, -100, 50, 20);
+  
+  //front left leg
+  rect(-60, -175, 25, 90);
+  ellipse(-60, -85, 50, 20);
+  
+  //back right leg
+  rect(25, -175, 20, 75);
+  ellipse(20, -100, 50, 20);
+  
+  //back left leg
+  rect(65, -175, 25, 90);
+  ellipse(65, -85, 50, 20);
+  
+  //neck
+  rect(-100, -300, 45, 125);
+  
+  //head
+  ellipse(-95, -300, 80, 60);
+  
+  //tail
+  rotate(-PI/6);
+  ellipse(180, -115, 50, 10);
+  rotate(PI/6);
+  
+  //eyes
+  fill(0);
+  noStroke();
+  ellipse(-120, -300, 10);
+  ellipse(-105, -300, 8);
   
   pop();
 }
