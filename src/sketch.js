@@ -147,10 +147,21 @@ function drawBear() {
     ellipse(-75-100, -60-50, 25, 25); // left ear
     ellipse(-25-100, -60-50, 25, 25); // right ear
     ellipse(-50-100, -40-50, 50, 50); // head
-    ellipse(-65-100, -65, 40, 20);// left arm
-    ellipse(-35-100, -65, 40, 20);// right arm
-    ellipse(-65-97, -20, 40, 20);// left leg
-    ellipse(-35-103, -20, 40, 20);// right leg
+    ellipse(-65-100, -65, 40, 20); // left arm
+    ellipse(-35-100, -65, 40, 20); // right arm
+    ellipse(-65-97, -20, 40, 20); // left leg
+    ellipse(-35-103, -20, 40, 20); // right leg
+    
+    fill(0);
+    noStroke();
+    ellipse(-160, -95, 8, 8); // left eye
+    ellipse(-140, -95, 8, 8); // right eye
+    ellipse(-150, -90, 8, 5); // nose
+    
+    fill(148, 118, 97);
+    stroke(2);
+    arc(-153, -88, 6, 5, 0, PI);
+    arc(-146, -88, 6, 5, 0, PI);
 
   pop();
 }
