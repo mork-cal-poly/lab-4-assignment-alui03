@@ -1,3 +1,8 @@
+let bearRotation = 0;
+let isSpinning = false; 
+let isScaled = false; 
+let bmoScale = 1; 
+
 function setup() {
   // These lines are fitting our canvas
   // where we want in the DOM
@@ -12,6 +17,24 @@ function draw() {
   drawBackground();
   drawBMO();
   drawBear();
+  
+  if (isSpinning) {
+    bearRotation += 0.05; // Increase rotation angle for spinning
+    if (bearRotation >= TWO_PI) {
+      // Spinning animation complete
+      isSpinning = false;
+      isScaled = true; // Set the flag to initiate BMO scaling
+    }
+  }
+  
+  if (isScaled) {
+    // Scale BMO to 0.25
+    bmoScale -= 0.01; // Gradually decrease BMO's scale
+    if (bmoScale <= 0.25) {
+      // Scaling animation complete
+      isScaled = false;
+    }
+  }
 }
 
 function drawBackground() {
@@ -56,6 +79,7 @@ function drawBackground() {
 function drawBMO() {
   push();
   translate(200, 400);
+  scale(bmoScale); // Apply BMO's scale
   
   // BMO's body
   fill(112, 185, 171);
@@ -133,14 +157,17 @@ function drawBMO() {
   
   rect(130, -278, 35, 15, 20, 20, 20, 0);
   rect(-165, -278, 35, 15, 20, 20, 0, 20);
-
+  
   pop();
 }
 
 function drawBear() {
   push();
-  translate(200,400);
+  translate(200, 400);
   
+  rotate(bearRotation);
+  
+  // bear 
   fill(148, 118, 97);
   noStroke(); 
     ellipse(-150, 5-50, 50, 65); // Body
@@ -162,6 +189,12 @@ function drawBear() {
     stroke(2);
     arc(-153, -88, 6, 5, 0, PI);
     arc(-146, -88, 6, 5, 0, PI);
-
+  
   pop();
+}
+
+function mouseClicked() {
+  if (!isSpinning && !isScaled) {
+    isSpinning = true; // Start spinning animation of bear's face
+  }
 }
